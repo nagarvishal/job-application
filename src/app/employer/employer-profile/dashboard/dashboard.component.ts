@@ -6,15 +6,19 @@ import { JobPreferencesComponent } from '../job-preferences/job-preferences.comp
 import { NotificationComponent } from '../notification/notification.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { JobActivityComponent } from '../job-activity/job-activity.component';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [AccountSettingComponent, ContributionsComponent, FollowingComponent, JobPreferencesComponent, NotificationComponent, ProfileComponent, JobActivityComponent],
+  imports: [CommonModule,AccountSettingComponent, ContributionsComponent, FollowingComponent, JobPreferencesComponent, NotificationComponent, ProfileComponent, JobActivityComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+    value:Number = 0;
+    changevalue(number:Number){
+        this.value = number;
+    }
 }

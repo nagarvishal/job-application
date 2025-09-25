@@ -11,31 +11,31 @@
             <br>
             <div style="border-bottom: 0.2px solid rgb(178, 178, 178);"></div>
             <br>
-            <div>
+            <div (click)="changevalue(0)">
                 <p>PROFILE</p>
                 
             </div>
             <br>
-            <div>
+            <div (click)="changevalue(1)">
                 <p>JOB PREFERENCES</p>
             </div>
             <br>
-            <div>
+            <div (click)="changevalue(2)">
                 <p>JOB ACTIVITY</p>
             </div>
             <br>
-            <div>
+            <div (click)="changevalue(3)">
                 <p>FOLLOWING</p>
             </div>
             <br>
-            <div>
+            <div (click)="changevalue(4)">
                 <p>CONTRIBUTION</p>
             </div>
             <br>
-            <div>
+            <div (click)="changevalue(5)">
                 <p>ACCOUNT SETTING</p>
             </div>
-            <br>
+            <br (click)="changevalue(6)">
             <div>
                 <p>NOTIFICATION</p>
             </div>
@@ -52,9 +52,30 @@
         </div>
         <div class="col-9">
             <div>
+                <div *ngIf="value==0?true:false">
+                    <app-profile></app-profile>
+                </div>
+                <div *ngIf="value==1?true:false">
+                    <app-job-preferences></app-job-preferences>
+                </div>
+                <div *ngIf="value==2?true:false">
+                    <app-job-activity></app-job-activity>
+                </div>
+                <div *ngIf="value==3?true:false">
+                    <app-following></app-following>
+                </div>
+                <div *ngIf="value==4?true:false">
+                    <app-contributions></app-contributions>
+                </div>
+                <div *ngIf="value==5?true:false">
+
+                </div>
+
                 <!-- <app-profile></app-profile> -->
                 <!-- <app-job-preferences></app-job-preferences> -->
-                 <app-job-activity></app-job-activity>
+                <!-- <app-job-activity></app-job-activity> -->
+                 <!-- <app-following></app-following> -->
+                
             </div>
         </div>
     </div>

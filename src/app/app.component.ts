@@ -12,4 +12,5 @@ import { EmployerComponent } from './employer/employer/employer.component';
 })
 export class AppComponent {
   title = 'job-application';
+  
 }
