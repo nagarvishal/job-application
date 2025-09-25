@@ -1,1 +1,24 @@
-<p>job-activity works!</p>
+<div>
+    <div class="profileclass">
+         <h3>Job ACTIVITY</h3>
+    </div>
+    <div class="profileclass">
+        <div class="container">
+            <div class="row">
+                <div class="col-2" (click)="changenumber(0)">SAVED</div>
+                <div class="col-2" (click)="changenumber(1)">ALERT</div>
+                <div class="col-2" (click)="changenumber(2)">APPLIED</div>
+            </div>
+            <div class="savedclass" *ngIf="value==0?true:false">
+                 saved
+            </div>
+            <div class="alertclass" *ngIf="value==1?true:false">
+                alertclass
+            </div>
+            <div class="appliedclass" *ngIf="value==2?true:false">
+                appliedclass
+            </div>
+        </div>
+    </div>
+
+</div>
