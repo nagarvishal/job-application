@@ -1,4 +1,13 @@
 .generalclass{
     margin: 2%;
-    
+}
+.generalclass2{
+    border: 0.5px solid rgb(89, 89, 89);
+    text-align: center;
+    padding: 20px;
+}
+
+.sideline{
+    border-left: 2px solid gray;
+    padding-left: 8px;
 }

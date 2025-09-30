@@ -1,0 +1,26 @@
+div,p{
+    padding: 0px;
+    margin: 0px;
+}
+div.profileclass{
+    border: 0.2px solid rgb(178, 178, 178);
+    padding: 20px;
+}
+
+p.profileparagraph
+{
+    margin-bottom: 16px;
+
+}
+div p.profilelable{
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.ibtn{
+    border: 1px solid gray;
+    padding: 4px 10px;
+    border-radius: 3px;
+    background-color: rgb(220, 220, 220);
+}

@@ -11,32 +11,47 @@
             <br>
             <div style="border-bottom: 0.2px solid rgb(178, 178, 178);"></div>
             <br>
-            <div (click)="changevalue(0)">
+            <div (click)="changevalue(0)" [ngClass]="{
+                'sideline':value==0?true:false
+            }">
                 <p>PROFILE</p>
                 
             </div>
             <br>
-            <div (click)="changevalue(1)">
+            <div (click)="changevalue(1)" [ngClass]="{
+                'sideline':value==1?true:false
+            }"
+            >
                 <p>JOB PREFERENCES</p>
             </div>
             <br>
-            <div (click)="changevalue(2)">
+            <div (click)="changevalue(2)" [ngClass]="{
+                'sideline':value==2?true:false
+            }">
                 <p>JOB ACTIVITY</p>
             </div>
             <br>
-            <div (click)="changevalue(3)">
+            <div (click)="changevalue(3)" [ngClass]="{
+                'sideline':value==3?true:false
+            }">
                 <p>FOLLOWING</p>
             </div>
             <br>
-            <div (click)="changevalue(4)">
+            <div (click)="changevalue(4)" [ngClass]="{
+                'sideline':value==4?true:false
+            }">
                 <p>CONTRIBUTION</p>
             </div>
             <br>
-            <div (click)="changevalue(5)">
+            <div (click)="changevalue(5)" [ngClass]="{
+                'sideline':value==5?true:false
+            }">
                 <p>ACCOUNT SETTING</p>
             </div>
-            <br (click)="changevalue(6)">
-            <div>
+            <br>
+            <div (click)="changevalue(6)" [ngClass]="{
+                'sideline':value==6?true:false
+            }">
                 <p>NOTIFICATION</p>
             </div>
 
@@ -47,7 +62,9 @@
                 <p>Sign Out</p>
             </div>
             <div>
-                Help Center
+                <div class="generalclass2">
+                    Help Center
+                </div>
             </div>
         </div>
         <div class="col-9">
@@ -70,12 +87,10 @@
                 <div *ngIf="value==5?true:false">
                     <app-account-setting></app-account-setting>
                 </div>
+                <div *ngIf="value==6?true:false">
+                    <app-notification></app-notification>
+                </div>
 
-                <!-- <app-profile></app-profile> -->
-                <!-- <app-job-preferences></app-job-preferences> -->
-                <!-- <app-job-activity></app-job-activity> -->
-                 <!-- <app-following></app-following> -->
-                
             </div>
         </div>
     </div>
