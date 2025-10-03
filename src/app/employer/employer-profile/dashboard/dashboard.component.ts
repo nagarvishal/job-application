@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { AccountSettingComponent } from '../account-setting/account-setting.component';
 import { ContributionsComponent } from '../contributions/contributions.component';
 import { FollowingComponent } from '../following/following.component';
@@ -7,6 +7,7 @@ import { NotificationComponent } from '../notification/notification.component';
 import { ProfileComponent } from '../profile/profile.component';
 import { JobActivityComponent } from '../job-activity/job-activity.component';
 import { CommonModule } from '@angular/common';
+import { ProfileService } from '../services/profile.service';
 
 
 @Component({
@@ -17,8 +18,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+
+    constructor(private profileService : ProfileService){
+        
+        this.profileService.userProfileData();
+    }
+
     value:Number = 0;
     changevalue(number:Number){
         this.value = number;
     }
+    
+
+
+    
 }

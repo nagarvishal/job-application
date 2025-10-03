@@ -9,5 +9,5 @@ import { DashboardComponent } from '../employer-profile/dashboard/dashboard.comp
   styleUrl: './employer.component.css'
 })
 export class EmployerComponent {
-
+    
 }
