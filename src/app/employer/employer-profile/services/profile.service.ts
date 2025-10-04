@@ -15,6 +15,20 @@ export class ProfileService {
         
     }
 
+    public fetchUserData(RequestBody:any){
+        
+        let url = Properties.host + "/user/fetch";
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+
+        const headers = new HttpHeaders({
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+
+        return this.http.post( url,RequestBody, { headers });
+        
+    }
+
     public userProfileData(){
 
         let url = Properties.host + "/user/profile/get";

@@ -1,0 +1,21 @@
+.content{
+    margin-top: 15%;
+}
+
+@media (min-width: 992px){
+    .content{
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 768px){
+    .content{
+        margin-top: 7%;
+    }
+}
+
+@media (max-width: 576px) {
+    .content{
+        margin-top: 5%;
+    }
+}

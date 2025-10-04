@@ -7,16 +7,16 @@
         <h5>Get Customized Job recommendations by keeping your preferences updated.</h5>
 
         <p class="profilelable">Desired Job Title*</p>
-        <p class="profileparagraph">Software Engineer</p>
+        <p class="profileparagraph">{{userprofile?.jobtitle}}</p>
 
         <p class="profilelable">Desired Minimum Salary*</p>
-        <p class="profileparagraph">$9.00.000 annually</p>
+        <p class="profileparagraph">Rs.{{userprofile?.desired_minimumsalary}} annually</p>
 
         <p class="profilelable">Desired Location*</p>
-        <p class="profileparagraph">Gurugaon, Haryana (India)</p>
+        <p class="profileparagraph">{{userprofile?.desired_location}}</p>
 
         <p class="profilelable">Open To Remote Work*</p>
-        <p class="profileparagraph">......</p>
+        <p class="profileparagraph">......</p>  
 
 
     </div>
