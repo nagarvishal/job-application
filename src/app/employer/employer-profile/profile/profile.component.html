@@ -7,19 +7,19 @@
         <p class="profileparagraph">Get the best job matches and a more relecant community experience.</p>
 
         <p class="profilelable">Employment Status*</p>
-        <p class="profileparagraph">Employed</p>
+        <p class="profileparagraph">{{userprofile?.employementstatus}}</p>
 
         <p class="profilelable">Job Title*</p>
-        <p class="profileparagraph">Software Engineer</p>
+        <p class="profileparagraph">{{userprofile?.jobtitle}}</p>
 
         <p class="profilelable">Location*</p>
-        <p class="profileparagraph">Gurugaon, Haryana (India)</p>
+        <p class="profileparagraph">{{userprofile?.city}} , {{userprofile?.state}}, {{[userprofile?.country]}}</p>
 
         <p class="profilelable">Primary Industry*</p>
-        <p class="profileparagraph">Finance India</p>
+        <p class="profileparagraph">{{userprofile?.industry}}</p>
 
         <p class="profilelable">Specialization*</p>
-        <p class="profileparagraph">Investment & Asset Management</p>
+        <p class="profileparagraph">{{userprofile?.specialization}}</p>
 
     </div>
     <div class="profileclass">
@@ -29,11 +29,10 @@
         <p>You choose whether to make you CV visible to hiringemployers on Indeed or keep it hidden. For More info see our Privacy Policy.</p>
 
         <div class="profileclass" style="margin:25px 50px 50px 0px">
+            
             <h5>Saved Document Name</h5>
             <p>Date Added : 24/09/2025</p>
             <p>Visible to hiring employers</p>
-
-
 
         </div>
         

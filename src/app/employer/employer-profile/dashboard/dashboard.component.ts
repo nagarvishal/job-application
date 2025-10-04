@@ -11,25 +11,32 @@ import { ProfileService } from '../services/profile.service';
 
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule,AccountSettingComponent, ContributionsComponent, FollowingComponent, JobPreferencesComponent, NotificationComponent, ProfileComponent, JobActivityComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    standalone: true,
+    imports: [CommonModule, AccountSettingComponent, ContributionsComponent, FollowingComponent, JobPreferencesComponent, NotificationComponent, ProfileComponent, JobActivityComponent],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
 
-    constructor(private profileService : ProfileService){
-        
+    userprofile: any = {};
+    constructor(private profileService: ProfileService) {
+
         this.profileService.userProfileData();
+
     }
 
-    value:Number = 0;
-    changevalue(number:Number){
+    value: Number = 0;
+    changevalue(number: Number) {
         this.value = number;
     }
-    
 
 
-    
+    ngOnInit() {
+        
+        this.profileService.userProfileData();
+
+    }
+
+
 }
