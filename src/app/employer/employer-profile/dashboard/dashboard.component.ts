@@ -20,11 +20,7 @@ import { ProfileService } from '../services/profile.service';
 export class DashboardComponent {
 
     userprofile: any = {};
-    constructor(private profileService: ProfileService) {
-
-        this.profileService.userProfileData();
-
-    }
+    constructor(private profileService: ProfileService) {}
 
     value: Number = 0;
     changevalue(number: Number) {
@@ -33,10 +29,11 @@ export class DashboardComponent {
 
 
     ngOnInit() {
-        
+
         this.profileService.userProfileData();
 
     }
 
 
 }
+

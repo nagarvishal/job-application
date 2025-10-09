@@ -22,6 +22,70 @@
         <p class="profileparagraph">{{userprofile?.specialization}}</p>
 
     </div>
+
+    <div class="profileclass">
+        <h3>Education -</h3>
+        <div *ngFor="let data of usereducation;let index=index;" class="educationsection">
+            <p style="font-size: 18px;">Education - {{index+1}} <i class="bi bi-pencil-square" (click)="popEditEducation(index)"></i> </p>
+            <div class="row">
+                <div class="col-6">
+                    <p class="profilelable">Institute Name*</p>
+                    <p class="profileparagraph">{{data.instituteName}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="profilelable">Year Of Passing*</p>
+                    <p class="profileparagraph">{{data.yearOfPassing}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p class="profilelable">Grads*</p>
+                    <p class="profileparagraph">{{data.grads}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="profilelable">Degree*</p>
+                    <p class="profileparagraph">{{data.degree}}</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div style="border: 1px solid gray;width: fit-content;padding: 4px;" (click)="popAddEducation()">Add Educaiton <i class="bi bi-person-plus-fill"></i></div>
+    </div>
+
+    <div *ngIf="(editEducation || addEducation)?true:false;" class="form-popup" id="myForm">
+        <div class="cros" (click)="closeEditEducation()">X</div>
+        <form  [formGroup]="educationForm" (ngSubmit)="onEducationSubmit()" class="form-container">
+            <h4>Edith Educaiton Details</h4>
+            <div class="row justify-content-between">
+                <div class="col-5">
+                    <label for="institute">Institute Name*</label>
+                    <input type="text" name="institute" required formControlName="instituteName">
+                </div>
+                <div class="col-5">
+                    <label for="yearofpassing">Year Of Passing*</label>
+                    <input type="text"  name="yearofpassing" required formControlName="yearOfPassing">
+                </div>
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-5">
+                     <label for="Grads*">Degree*</label>
+                    <input type="text"  name="Grads*" required formControlName="degree">
+                </div>
+                <div class="col-5">
+                    <label for="Grads*">Grads*</label>
+                    <input type="number"  name="Grads*" required formControlName="grads">
+                </div>
+            </div>
+
+            <button type="submit" class="btn" *ngIf="editEducation?true:false;">Update Information</button>
+            <button type="submit" class="btn" *ngIf="addEducation ?true:false;">Add Education</button>
+            <button type="submit" class="btn" *ngIf="editEducation?true:false;" (click)="deleteInformation()">Delete Information</button>
+            
+        </form>
+    </div>
+
     <div class="profileclass">
         <h3>CV</h3>
         <p>profileparagraph</p>

@@ -21,6 +21,51 @@
 
     </div>
     <div class="profileclass">
+        <h3>Experience - </h3>
+        <div *ngFor="let data of userExperiences;let index=index;" class="educationsection">
+            <p style="font-size: 18px;">Education - {{index+1}} <i class="bi bi-pencil-square"></i> </p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="profilelable">Organization Name</p>
+                        <p class="profileparagraph">{{data.companyName}}</p>
+                    </div>
+                    <div class="col-6">
+                        <p class="profilelable">Job Title</p>
+                        <p class="profileparagraph">{{data.jobTitle}}</p>
+                    </div>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p class="profilelable">Start Date</p>
+                    <p class="profileparagraph">{{data.startDate}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="profilelable">End Date</p>
+                    <p class="profileparagraph">{{data.endDate}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <p class="profilelable">Currently Working</p>
+                    <p class="profileparagraph">{{data.currentlyWorking}}</p>
+                </div>
+                <div class="col-6">
+                    <p class="profilelable">Job Title</p>
+                    <textarea name="" id="" style="width: 100%;">{{data.description}}</textarea>
+                    
+                </div>
+            </div>
+        </div>
+        <div style="border: 1px solid gray;width: fit-content;padding: 4px;">Add Experience<i class="bi bi-person-plus-fill"></i></div>
+    </div>
+
+
+    <div class="profileclass">
         <h3>CV</h3>
         <p>profileparagraph</p>
         <p>Add a CV to save time and autofill certain job applications. You can also share it to hear from employees about openings.</p>

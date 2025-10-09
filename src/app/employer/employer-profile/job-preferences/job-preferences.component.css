@@ -18,3 +18,14 @@ div p.profilelable{
     color: gray;
 }
 
+.educationsection{
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    margin: 10px 0p;
+    margin-left: 0-px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 10px;
+}
+

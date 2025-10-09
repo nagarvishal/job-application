@@ -9,12 +9,26 @@ import { BehaviorSubject } from 'rxjs';
 export class ProfileService {
 
     private userProfileSource = new BehaviorSubject<any>(null);
+    
+
     userprofile = this.userProfileSource.asObservable();
+    
 
     constructor(private http: HttpClient) {
         
     }
 
+    public fetchUserEducation(){
+        let url = Properties.host + "/user/education/get";
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+
+        const headers = new HttpHeaders({
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+
+        return this.http.get( url,{ headers });
+    }
     public fetchUserData(RequestBody:any){
         
         let url = Properties.host + "/user/fetch";
@@ -26,6 +40,64 @@ export class ProfileService {
         });
 
         return this.http.post( url,RequestBody, { headers });
+        
+    }
+
+    public callPostAPI(url:string, requestbody:any){
+
+        url = Properties.host + url;
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+        const headers = new HttpHeaders({
+           
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+        return this.http.post(url,requestbody,{headers});
+
+    }
+
+    public callGetAPI(url:string){
+ 
+        url = Properties.host + url; 
+
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+
+        const headers = new HttpHeaders({
+           
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+        return this.http.get(url, {headers});
+        
+    }
+
+    public callPutAPI(url:string,requestbody:any){
+
+        url = Properties.host + url; 
+
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+
+        const headers = new HttpHeaders({
+           
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+        return this.http.put(url, requestbody ,{headers});
+        
+    }
+
+    public callDeleteAPI(url:string){
+
+        url = Properties.host + url;
+
+        const encodedCredentials = window.btoa(`${Properties.username}:${Properties.password}`);
+
+        const headers = new HttpHeaders({
+           
+            'Authorization': `Basic ${encodedCredentials}`,
+            'Accept': 'application/json'
+        });
+        return this.http.delete(url,{headers});
         
     }
 
