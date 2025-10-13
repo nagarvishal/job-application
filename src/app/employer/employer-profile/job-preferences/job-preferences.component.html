@@ -23,45 +23,113 @@
     <div class="profileclass">
         <h3>Experience - </h3>
         <div *ngFor="let data of userExperiences;let index=index;" class="educationsection">
-            <p style="font-size: 18px;">Education - {{index+1}} <i class="bi bi-pencil-square"></i> </p>
+            <p style="font-size: 18px;">Experience - {{index+1}} <i class="bi bi-pencil-square"></i> </p>
 
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-md-6 col-xl-4">
                         <p class="profilelable">Organization Name</p>
                         <p class="profileparagraph">{{data.companyName}}</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-md-6 col-xl-4">
                         <p class="profilelable">Job Title</p>
                         <p class="profileparagraph">{{data.jobTitle}}</p>
                     </div>
-            </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
+                    <div class="col-md-6 col-xl-4">
                     <p class="profilelable">Start Date</p>
                     <p class="profileparagraph">{{data.startDate}}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-xl-4">
                     <p class="profilelable">End Date</p>
-                    <p class="profileparagraph">{{data.endDate}}</p>
+                    <p class="profileparagraph">{{data.endDate | notapplicable}}</p>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
+                <div class="col-md-6 col-xl-4">
                     <p class="profilelable">Currently Working</p>
                     <p class="profileparagraph">{{data.currentlyWorking}}</p>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6 col-xl-4">
                     <p class="profilelable">Job Title</p>
                     <textarea name="" id="" style="width: 100%;">{{data.description}}</textarea>
-                    
+                </div>
                 </div>
             </div>
         </div>
-        <div style="border: 1px solid gray;width: fit-content;padding: 4px;">Add Experience<i class="bi bi-person-plus-fill"></i></div>
+        <div *ngIf="addexp?true:false" class="educationsection">
+            <form [formGroup]="expform" (ngSubmit)="addExperience()">
+                <h5>Add Experience</h5>
+                <br>
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group first">
+                                <label for="companyname">Company Name</label>
+                                <input  type="text" class="form-control" id="companyname" formControlName="companyName">
+                                <div class="validationclass" *ngIf="((expformcontrol.companyName.touched && (!expformcontrol.companyName.valid)) || (!expform.valid && clicked))?true:false">
+                                    <div *ngIf="expformcontrol?.companyName?.errors?.required ? true : false">
+                                        <p style="color: red;font-size: 12px;margin-top: 2px;">Company Name is Required</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group first">
+                                <label for="jobTitle">Job Title</label>
+                                <input  type="text" class="form-control" id="jobTitle" formControlName="jobTitle">
+
+                                <div class="validationclass" *ngIf="((expformcontrol.jobTitle.touched && (!expformcontrol.jobTitle.valid)) || (!expform.valid && clicked))?true:false">
+                                    <div *ngIf="expformcontrol?.jobTitle?.errors?.required ? true : false">
+                                        <p style="color: red;font-size: 12px;margin-top: 2px;">Job Title is Required</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group first">
+                                <label for="startDate">Start Date</label>
+                                <input  type="date" class="form-control" id="startDate" formControlName="startDate">
+
+                                <div class="validationclass" *ngIf="((expformcontrol.startDate.touched && (!expformcontrol.startDate.valid)) || (!expform.valid && clicked))?true:false">
+                                    <div *ngIf="expformcontrol?.startDate?.errors?.required ? true : false">
+                                        <p style="color: red;font-size: 12px;margin-top: 2px;">Job Title is Required</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group first">
+                                <label for="endDate">End Date</label>
+                                <input type="date" class="form-control" id="endDate" formControlName="endDate" [readonly]="expformcontrol.currentlyWorking.value" [(ngModel)]="expformcontrol.endDate.value">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-6">
+                            <div class="form-group first">
+                                <label for="Description">Description</label>
+                                <textarea name="description" id="Description" formControlName="description" style="width: 100%;height: 100%;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <div class="form-group first">
+                                <label for="workingYes">Currently Working</label>
+                                <input
+                                    (click)="clickcheckbox($event)"
+                                    type="checkbox"
+                                    formControlName="currentlyWorking"
+                                    id="workingYes"
+                                />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <button type="submit" class="ibtn">SUBMIT</button>
+                </div>
+                
+            </form>
+        </div>
+        <div style="border: 1px solid gray;width: fit-content;padding: 4px;" (click)="addexptemplate()">Add Experience<i class="bi bi-person-plus-fill"></i></div>
+
     </div>
 
 

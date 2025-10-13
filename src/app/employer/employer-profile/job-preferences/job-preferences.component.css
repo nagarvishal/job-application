@@ -29,3 +29,25 @@ div p.profilelable{
     margin-bottom: 10px;
 }
 
+.first
+{
+    margin: 10px 20px;
+}
+.first input,textarea{
+    border: none;
+    border-radius: 3px;
+    border: 0.5px solid #dddddd;
+    background-color: #f7f7f7;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.ibtn{
+    padding: 4px 8px;
+    margin: 4px;
+    border: 0.5px solid #dddddd;
+    background-color: #f7f7f7;
+
+}
+
+
+
