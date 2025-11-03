@@ -31,7 +31,7 @@ div p.profilelable{
   padding: 20px; /* optional */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.form-popup .cros 
+.form-popup .cros
 {
     font-size: 20px;
     position: fixed;
@@ -56,7 +56,7 @@ div p.profilelable{
 .form-container input[type=text], .form-container input[type=password] {
   width: 100%;
   padding: 8px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 10px 0;
   border: 1px solid gray;
   border-radius: 5px;
 }
@@ -64,16 +64,15 @@ div p.profilelable{
 .form-container input[type=number], .form-container input[type=password] {
   width: 100%;
   padding: 8px;
-  margin: 5px 0 22px 0;
+  margin: 5px 0 10px 0;
   border: 1px solid gray;
   border-radius: 5px;
 }
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  
+
   padding: 10px 10px;
-  border: none;
   cursor: pointer;
   margin-right:10px;
   opacity: 0.8;
@@ -86,10 +85,26 @@ div p.profilelable{
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #dddddd;
-    margin: 10px 0p;
-    margin-left: 0-px;
+    margin: 10px 0px;
+    margin-left: 0px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     margin-bottom: 10px;
+}
+
+.hello{
+  margin: 10px;
+}
+.ibtn{
+  border: 0.5px solid gray;
+  border-radius: 3px;
+  background-color: white;
+  padding: 4px 10px;
+}
+.skillbox{
+  padding: 5px;
+  width: 200px;
+  margin: 5px;
+
 }
 
 

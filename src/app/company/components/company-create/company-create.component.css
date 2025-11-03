@@ -1,0 +1,77 @@
+/* styles.css */
+
+:root {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1025px) {
+  :root {
+    font-size: 16px;
+  }
+}
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.container {
+  margin: auto;
+}
+.formbox{
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+label {
+  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  color: gray;
+}
+
+input{
+  font-size: 1rem;
+  display: block;
+  border: none;
+  /*border: 1px solid lightgray;*/
+  border-radius: 0.2rem;
+  margin: 0.4rem;
+  padding: 0.4rem;
+
+  color: gray;
+
+  width: 70%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  outline: none;
+}
+
+textarea{
+  width: 100%;
+  font-size: 1rem;
+  display: block;
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+  margin: 0.4rem;
+  padding: 0.4rem;
+  color: gray;
+}
+
+.ibtn{
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border: 1px solid lightgray;
+  border-radius: 0.2rem;
+  color: gray;
+
+
+}

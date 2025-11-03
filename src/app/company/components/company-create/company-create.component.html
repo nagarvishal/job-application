@@ -1,0 +1,112 @@
+<p>company-create works!</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="container">
+    <div class="row justify-content-md-left">
+
+      <div class="col-sm-4 col-md-3 col-xl-3 col-xxl-3 formbox">
+
+        <label for="companyName">Company Name</label>
+        <input type="text" formControlName="companyName" name="companyName" id="companyName">
+
+        <div class="validationclass" *ngIf="((formcontrol.companyName.touched && (!formcontrol.companyName.valid)) || (!form.valid && clicked))">
+          <div *ngIf="formcontrol?.companyName?.errors?.required">
+            <p style="color: red;font-size: 12px;margin-top: 2px;">Company Name is Required</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-6 col-md-6 formbox">
+
+        <label for="description">Description</label>
+        <textarea  formControlName="description" name="description" id="description"></textarea>
+
+        <div class="validationclass" *ngIf="((formcontrol.description.touched && (!formcontrol.description.valid)) || (!form.valid && clicked))">
+          <div *ngIf="formcontrol?.description?.errors?.required">
+            <p style="color: red;font-size: 12px;margin-top: 2px;">description is Required</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 col-md-3 col-xl-3 col-xxl-3 formbox">
+
+        <label for="industry">Industry</label>
+        <input type="text" formControlName="industry" name="industry" id="industry">
+
+        <div class="validationclass" *ngIf="((formcontrol.industry.touched && (!formcontrol.industry.valid)) || (!form.valid && clicked))">
+          <div *ngIf="formcontrol?.industry?.errors?.required">
+            <p style="color: red;font-size: 12px;margin-top: 2px;">industry is Required</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 col-md-3 col-xl-3 col-xxl-3 formbox">
+
+        <label for="website">Website URL</label>
+        <input type="text" formControlName="website" name="website" id="website">
+
+        <div class="validationclass" *ngIf="((formcontrol.website.touched && (!formcontrol.website.valid)) || (!form.valid && clicked))">
+          <div *ngIf="formcontrol?.website?.errors?.required">
+            <p style="color: red;font-size: 12px;margin-top: 2px;">website is Required</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-4 col-md-3 col-xl-3 col-xxl-3 formbox">
+
+        <label for="location">Location</label>
+        <input type="text" formControlName="location" name="location" id="location">
+
+        <div class="validationclass" *ngIf="((formcontrol.location.touched && (!formcontrol.location.valid)) || (!form.valid && clicked))">
+          <div *ngIf="formcontrol?.location?.errors?.required">
+            <p style="color: red;font-size: 12px;margin-top: 2px;">location is Required</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-xl-12 col-xxl-12 formbox">
+        <div class="container">
+          <div class="row justify-content-left">
+            <div class="col">
+              <label for="email_domains">Email Domain</label>
+              <input type="text"  id="email_domains" #domaininput>
+            </div>
+            <div class="col">
+              <br>
+              <button class="ibtn" (click)="addDomain(domaininput)">Add Domain</button>
+            </div>
+            <div class="col-12">
+              <div class="container">
+                <div class="row">
+                  <div class="col-2" *ngFor="let domain of formcontrol.email_domains.value;">
+                    {{domain}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+    <button type="submit" class="ibtn">Submit</button>
+  </div>
+
+</form>
+
+
+
+

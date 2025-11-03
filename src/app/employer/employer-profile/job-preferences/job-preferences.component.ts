@@ -65,6 +65,9 @@ export class JobPreferencesComponent {
       console.log($event);
     }
 
+    editExperience(){
+      
+    }
     addExperience(){
       this.clicked = true;
       if(this.expform.valid){

@@ -18,7 +18,35 @@ export class ProfileComponent implements OnInit,OnDestroy {
   editEducation : boolean = false;
   addEducation : boolean = false;
   educationForm : any;
+  skillform:any;
+  userskills:any = []
   constructor(private profileService : ProfileService, private fb : FormBuilder){
+    this.skillform = fb.group({
+      skillName : ["",Validators.required],
+      profeciencyLevel : [""],
+      yearOfExperience : [""]
+    })
+
+  }
+
+  addSkill(){
+
+    const url = "/user/skill/create";
+    const body = this.skillform.value;
+    this.profileService.callPostAPI(url,body).subscribe({
+        next : (response)=>{
+            console.log(response);
+            this.fetchUserSkills();
+        },
+        error : (e)=>{
+            console.log(e);
+        },
+        complete : ()=>{
+            console.log("hello world");
+        }
+    })
+
+
 
   }
 
@@ -129,6 +157,21 @@ export class ProfileComponent implements OnInit,OnDestroy {
         }
     })
   }
+  fetchUserSkills(){
+    const url = "/user/skill/get";
+    this.profileService.callGetAPI(url).subscribe({
+      next : (response:any)=>{
+        console.log(response);
+        this.userskills = response.data;
+      },
+      error : (e)=>{
+        console.log(e);
+      },
+      complete : ()=>{
+        console.log("process has been compelted");
+      }
+    })
+  }
 
   ngOnInit() {
 
@@ -137,7 +180,9 @@ export class ProfileComponent implements OnInit,OnDestroy {
       console.log("userprofiledata=>",this.userprofile);
     })
 
+
     this.fetchUserEducation();
+    this.fetchUserSkills();
 
   }
 

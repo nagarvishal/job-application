@@ -24,6 +24,35 @@
     </div>
 
     <div class="profileclass">
+        <h5>Add Skills - </h5>
+        <form  [formGroup]="skillform" (ngSubmit)="addSkill()" class="form-container">
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-6 col-xl-4 col-xxl-3 hello">
+                        <label for="skillname">*Skill Name</label>
+                        <input type="text" name="skillname" formControlName="skillName">
+                    </div>
+                    <div class="col-md-6 col-xl-4 col-xxl-3 hello">
+                        <label for="profeciencyLevel">*Profeciency Level</label>
+                        <input type="number" max="10" min="0" name="profeciencyLevel" formControlName="profeciencyLevel">
+                    </div>
+                    <div class="col-md-6 col-xl-4 col-xxl-3 hello">
+                        <label for="yearOfExperience">*Year Of Experience</label>
+                        <input type="number" name="yearOfExperience" formControlName="yearOfExperience">
+                    </div>
+                </div>
+                <button type="submit" class="ibtn">add skill</button>
+            </div>
+        </form>
+        <br>
+        <div class="d-flex justify-content-start flex-wrap">
+            <div *ngFor="let data of userskills;let index = index;" class="skillbox" >
+                <span style="color: gray;border: 0.05px solid rgb(189, 189, 189);margin-right: 5px;background-color: rgb(173, 173, 173);padding: 1px 5px;border-radius: 5px;">x</span>{{data.skillName}}
+            </div>
+        </div>
+    </div>
+
+    <div class="profileclass">
         <h3>Education -</h3>
         <div *ngFor="let data of usereducation;let index=index;" class="educationsection">
             <p style="font-size: 18px;">Education - {{index+1}} <i class="bi bi-pencil-square" (click)="popEditEducation(index)"></i> </p>
